@@ -2,12 +2,12 @@ const articlesData = [
     { 
         id: 1, 
         title: 'Grilled Tomatoes at Home', 
-        img: "/Images/gt.png",
+        img: "food_blogging_website/src/Images/gt.png",
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum totam non aliquam in itaque et explicabo ratione dicta animi! Quam!' 
     },
     { 
         id: 2, 
-        title: 'Snakes for Travel', 
+        title: 'Snackes for Travel', 
         img: '',
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum totam non aliquam in itaque et explicabo ratione dicta animi! Quam!' 
     },
