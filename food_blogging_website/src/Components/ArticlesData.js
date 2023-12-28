@@ -2,37 +2,37 @@ const articlesData = [
     { 
         id: 1, 
         title: 'Grilled Tomatoes at Home', 
-        img: "food_blogging_website/src/Images/gt.png",
+        img: "/Images/gt.png",
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum totam non aliquam in itaque et explicabo ratione dicta animi! Quam!' 
     },
     { 
         id: 2, 
         title: 'Snackes for Travel', 
-        img: '',
+        img: '/Images/snackes.png',
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum totam non aliquam in itaque et explicabo ratione dicta animi! Quam!' 
     },
     { 
         id: 3, 
         title: 'Post-workout Recipes', 
-        img: '',
+        img: '/Images/postwork.png',
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum totam non aliquam in itaque et explicabo ratione dicta animi! Quam!' 
     },
     { 
         id: 4, 
         title: 'How to Grill Corn', 
-        img: '',
+        img: '/Images/grill.png',
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum totam non aliquam in itaque et explicabo ratione dicta animi! Quam!' 
     },
     { 
         id: 5, 
         title: 'Crunchwrap Supreme', 
-        img: '',
+        img: '/Images/crunchwrap.png',
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum totam non aliquam in itaque et explicabo ratione dicta animi! Quam!' 
     },
     { 
         id: 6, 
         title: 'Broccoli Cheese Soup', 
-        img: '',
+        img: '/Images/brocolli.png',
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum totam non aliquam in itaque et explicabo ratione dicta animi! Quam!' 
     },
   ];
