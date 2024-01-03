@@ -1,28 +1,61 @@
 import React from "react";
 import foodVan from "../Images/van.png";
 import mainImg from "../Images/homeImage.png";
-import { Box, Button, Heading, Spacer, Text } from "@chakra-ui/react";
+import { Box, Button, Heading, Spacer, Text, useBreakpointValue } from "@chakra-ui/react";
 
 const Header = () => {
+  const displayImage = useBreakpointValue({ base: "none", md: "block" });
+  // const MainImgStyles = useBreakpointValue({
+  //   base: {
+  //     width: '378px',
+  //     height: '413px',
+  //     // flexShrink: '0px',
+  //     // color: "var(--body, #444957)",
+  //     textAlign: "center",
+      
+  //   },
+  //   // width: "735px", height: "804px"
+  //   md: {
+  //     width: "735px", 
+  //     height: "804px",
+  //     // textAlign: "justify",
+  //     // lineHeight: "24px",
+  //   },
+  // });
+
+
+  const contentStyles = useBreakpointValue({
+    base: {
+     width: '240px',
+     height: '130px',
+     flexShrink: '0px',
+     textAlign: 'center',
+     marginTop: '75px'
+    },
+    
+  });
+
+
   return (
     <>
       <Box display="flex">
         <Box>
           <Box pl={100} pt={33}>
-            <img src={foodVan} alt="foodVan" />
+            <img src={foodVan} alt="foodVan" style={{display: displayImage}}/>
           </Box>
 
-          <Box ml={100} mt={111} w={345}>
+          <Box ml={100} mt={111} w={345} {...contentStyles} >
             <Heading color="var(--primary, #0E2368)">
               Discover the{" "}
               <Text color="#E23744" as="span">
-                {" "}
+                {/* {" "} */}
                 Best
-              </Text>{" "}
+              </Text>
+              {" "}
               Food and Drinks
             </Heading>
             <Text mt={4} fontSize="s">
-              Naturally made Healthcare Products for the better care & support
+            Naturally made Healthcare Products for the better care & support
               of your body.
             </Text>
             <Button
@@ -38,11 +71,15 @@ const Header = () => {
           </Box>
         </Box>
         <Spacer />
+{/* w={735} h={804}  */}
 
-        <Box w={735} h={804} position="relative">
-          <img src={mainImg} alt="mainImg" />
+        <Box position="relative" >
+          <img src={mainImg} alt="mainImg" style={{ width: "735px", height: "804px", flexShrink: '0' }} 
+          // {...MainImgStyles}
+          />
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            // {...svgStyles}
             style={{
               position: "absolute",
               right: 0,
