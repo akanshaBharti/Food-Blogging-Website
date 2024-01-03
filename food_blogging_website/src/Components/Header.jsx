@@ -5,24 +5,15 @@ import { Box, Button, Heading, Spacer, Text, useBreakpointValue } from "@chakra-
 
 const Header = () => {
   const displayImage = useBreakpointValue({ base: "none", md: "block" });
-  // const MainImgStyles = useBreakpointValue({
-  //   base: {
-  //     width: '378px',
-  //     height: '413px',
-  //     // flexShrink: '0px',
-  //     // color: "var(--body, #444957)",
-  //     textAlign: "center",
-      
-  //   },
-  //   // width: "735px", height: "804px"
-  //   md: {
-  //     width: "735px", 
-  //     height: "804px",
-  //     // textAlign: "justify",
-  //     // lineHeight: "24px",
-  //   },
-  // });
-
+  
+  const displayStyles =  useBreakpointValue({
+    base: {
+      display : 'grid',
+    }, 
+    md: {
+      display: 'flex',
+    }
+  })
 
   const contentStyles = useBreakpointValue({
     base: {
@@ -30,41 +21,64 @@ const Header = () => {
      height: '130px',
      flexShrink: '0px',
      textAlign: 'center',
-     marginTop: '75px'
+     
     },
-    
+
   });
+
+  const svgStyles = useBreakpointValue({
+    base:{
+      width:'375px',
+      height:'426px',
+      
+    },
+    md: {
+      width: '752px',
+      height: '839px'
+    }
+  });
+
+  const mainImgStyles =  useBreakpointValue({
+    base: {
+      width: '378px',
+      height: '413px',
+    },
+    md: {
+      width: '735px',
+      height: '804px'
+    }
+  })
 
 
   return (
     <>
-      <Box display="flex">
+      <Box display="flex" {...displayStyles}>
         <Box>
           <Box pl={100} pt={33}>
             <img src={foodVan} alt="foodVan" style={{display: displayImage}}/>
           </Box>
 
-          <Box ml={100} mt={111} w={345} {...contentStyles} >
-            <Heading color="var(--primary, #0E2368)">
+          <Box >
+            <Heading {...contentStyles} mt={111} mr={260} ml={100} color="var(--primary, #0E2368)" textAlign='justify' >
               Discover the{" "}
               <Text color="#E23744" as="span">
-                {/* {" "} */}
+                {" "}
                 Best
               </Text>
               {" "}
               Food and Drinks
             </Heading>
-            <Text mt={4} fontSize="s">
+            <Text mr={260} ml={100} mt={4} {...contentStyles} fontSize="s" textAlign= "justify">
             Naturally made Healthcare Products for the better care & support
               of your body.
             </Text>
             <Button
               backgroundColor="#E23744"
-              mt={4}
+              // mt={4}
               color="white"
               borderRadius="34px"
               display="flex"
-              ml={30}
+              ml={100}
             >
               Explore Now!
             </Button>
@@ -74,12 +88,10 @@ const Header = () => {
 {/* w={735} h={804}  */}
 
         <Box position="relative" >
-          <img src={mainImg} alt="mainImg" style={{ width: "735px", height: "804px", flexShrink: '0' }} 
-          // {...MainImgStyles}
-          />
+          <img src={mainImg} {...mainImgStyles} alt="mainImg" style={{ width: "735px", height: "804px", flexShrink: '0' }} />
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            // {...svgStyles}
+           {...svgStyles}
             style={{
               position: "absolute",
               right: 0,

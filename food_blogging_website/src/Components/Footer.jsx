@@ -1,11 +1,26 @@
 import React from "react";
 import foodVan from "../Images/van.png";
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, useBreakpointValue } from "@chakra-ui/react";
 
 const Footer = () => {
+  
+  const displayStyles = useBreakpointValue({
+    base:{
+      display: 'grid'
+    },
+    md:{
+      display: 'flex'
+    }
+  });
+
+  const contentStyles =  useBreakpointValue({
+    base:{
+      marginLeft: '42px',
+    }
+  })
   return (
     <>
-      <Box mt={65} display="flex" background="#F8F8F8">
+      <Box mt={65} display="flex" background="#F8F8F8" {...displayStyles}>
         <Box>
           <img
             src={foodVan}
@@ -13,8 +28,8 @@ const Footer = () => {
             style={{ marginTop: "123px", marginLeft: "103px" }}
           />
         </Box>
-        <Box display="flex" mt={84} ml={210}>
-          <Box textAlign="justify" mb={92}>
+        <Box display="flex" mt={84} ml={210} {...displayStyles} {...contentStyles}>
+          <Box textAlign="justify" mb={92} >
             <Heading fontSize="18px" color="var(--primary, #0E2368)">
               Contact Us
             </Heading>
@@ -30,7 +45,7 @@ const Footer = () => {
             </Text>
           </Box>
 
-          <Box textAlign="justify" ml={206} mb={92}>
+          <Box textAlign="justify" ml={206} mb={92} {...contentStyles}>
             <Heading fontSize="18px" color="var(--primary, #0E2368)">
               More
             </Heading>
