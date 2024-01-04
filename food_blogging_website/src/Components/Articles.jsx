@@ -7,11 +7,20 @@ import {
   Stack,
   Text,
   Button,
+  useBreakpointValue
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import articlesData from "./ArticlesData";
 
 const Articles = () => {
+  const contentStyles = useBreakpointValue({
+    base: {
+      display: 'grid'
+    },
+    md: {
+      display:'flex'
+    }
+  })
   const [startIndex, setStartIndex] = useState(0);
 
   const handleNextClick = () => {
@@ -25,7 +34,7 @@ const Articles = () => {
   const displayedCards = articlesData.slice(startIndex, startIndex + 3);
   return (
     <>
-      <Box mt={158} ml={108} display="flex">
+      <Box mt={158} ml={108} display="flex" >
         <Heading
           color="var(--primary, #0E2368)"
           fontSize="46px"
@@ -34,7 +43,7 @@ const Articles = () => {
           Latest Articles
         </Heading>
       </Box>
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" justifyContent="center" {...contentStyles}>
         {displayedCards.map((card) => (
           <Card key={card.id} maxW="sm" mt={41} ml={108}>
             <CardBody>

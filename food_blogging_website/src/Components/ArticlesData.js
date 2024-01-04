@@ -7,7 +7,7 @@ const articlesData = [
     },
     { 
         id: 2, 
-        title: 'Snackes for Travel', 
+        title: 'Snacks for Travel', 
         img: '/Images/snackes.png',
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum totam non aliquam in itaque et explicabo ratione dicta animi! Quam!' 
     },
